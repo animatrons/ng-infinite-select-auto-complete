@@ -1,0 +1,38 @@
+<div style="text-align:center">
+  <h1>
+      Welcome to {{ title }} !
+  </h1>
+</div>
+<div class="container">
+  <!-- <mat-form-field appearance="outline">
+      <mat-label>Select</mat-label>
+      <mat-select (infiniteScroll)="getNextBatch()"
+          (valueChange)="onSelect($event)"
+
+          infiniteScrollSelect>
+          <mat-option *ngFor="let option of options$ | async" [value]="option">{{option}}</mat-option>
+      </mat-select>
+  </mat-form-field> -->
+  <hr>
+  <hr>
+
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Number</mat-label>
+    <input type="text"
+        placeholder="Pick one"
+        aria-label="Number"
+        matInput
+        [formControl]="myControl"
+        [matAutocomplete]="auto">
+    <mat-autocomplete
+      appTestAutoComplete
+      #auto="matAutocomplete"
+      (infiniteScroll)="getBlock($event.block, $event.filter, $event.reset)"
+      [limit]="limit"
+      (optionSelected)="onSelect($event)">
+      <mat-option *ngFor="let option of options$ | async" [value]="option">
+        {{option}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+</div>

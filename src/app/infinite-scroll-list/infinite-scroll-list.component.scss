@@ -1,0 +1,31 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  .filter-input {
+    width: 300px;
+    padding: 10px 34px 0px 34px;
+    background-color: aquamarine;
+    input {
+      width: 100%;
+    }
+  }
+  .our-list-wrapper {
+    height: 600px;
+    width: 300px;
+    background-color: aquamarine;
+    padding: 21px 34px;
+    overflow-y: scroll;
+    margin-right: 20px;
+    .list-item {
+      padding: 5px 10px;
+      margin: 2px 0px;
+      background-color: rgb(192, 185, 167);
+      font-family: 'Courier New', Courier, monospace;
+      font-size: medium;
+      font-style: italic;
+    }
+  }
+}
+.infinite-scroll-wrapper {
+  height: 100%;
+}

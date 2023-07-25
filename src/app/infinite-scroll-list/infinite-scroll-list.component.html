@@ -1,0 +1,35 @@
+<div style="text-align:center">
+  <h1>
+      {{ title }} !
+  </h1>
+</div>
+<div class="container">
+  <div>
+    <div class="filter-input">
+      <input [formControl]="scrollItemsFilterController" placeholder="filter">
+    </div>
+    <div class="our-list-wrapper"
+      infinite-scroll
+      [infiniteScrollDistance]="scrollDistance"
+      [infiniteScrollThrottle]="throttle"
+      [scrollWindow]="false"
+
+      (scrolled)="onScroll()"
+    >
+      <div *ngFor="let item of itemsToShow; index as i" class="list-item">
+        <strong> {{item}} </strong>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <div class="filter-input">
+      <input [formControl]="allItemsFilterController" placeholder="filter">
+    </div>
+    <div class="our-list-wrapper">
+      <div *ngFor="let item of itemsAll; index as i" class="list-item">
+        <strong> {{item}} </strong>
+      </div>
+    </div>
+  </div>
+</div>
