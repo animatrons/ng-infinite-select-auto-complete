@@ -25,7 +25,7 @@ export class TestAutoCompleteDirective implements OnInit, OnDestroy, AfterViewIn
   private thrPc = 0;
   private singleOptionHeight = SELECT_ITEM_HEIGHT_EM;
 
-  constructor(private matAuto: MatAutocomplete, @Inject(ElementRef) private elementRef: ElementRef, @Inject(NgZone) private ngZone: NgZone) { }
+  constructor(@Inject(MatAutocomplete) private matAuto: MatAutocomplete, @Inject(ElementRef) private elementRef: ElementRef, @Inject(NgZone) private ngZone: NgZone) { }
 
   private destroyed$ = new Subject<boolean>();
 
