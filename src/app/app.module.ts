@@ -1,19 +1,18 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-
-import {MatSelectModule} from '@angular/material/select';
-import {MatInputModule} from '@angular/material/input';
-import {MatAutocompleteModule} from '@angular/material/autocomplete';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { InfiniteScrollSelectDirective } from './shared/infinite-scroll-select.directive';
 import { TestAutoCompleteDirective } from './shared/test-auto-complete.directive';
 import { InfiniteScrollListComponent } from './infinite-scroll-list/infinite-scroll-list.component';
-import { Route, RouterModule } from '@angular/router';
 import { InifinteScrollMatselectComponent } from './inifinte-scroll-matselect/inifinte-scroll-matselect.component';
+import { MatSelectModule } from '@angular/material/select';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatInputModule } from '@angular/material/input';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { Route, RouterModule } from '@angular/router';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 const routes: Route[] = [
@@ -42,10 +41,10 @@ const routes: Route[] = [
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     MatSelectModule,
     MatFormFieldModule,
     BrowserAnimationsModule,
-    FormsModule,
     MatAutocompleteModule,
     ReactiveFormsModule,
     MatInputModule,

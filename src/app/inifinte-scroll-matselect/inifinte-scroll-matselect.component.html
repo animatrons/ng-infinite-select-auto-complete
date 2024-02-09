@@ -30,7 +30,7 @@
       (infiniteScroll)="getBlock($event.block, $event.filter, $event.reset)"
       [limit]="limit"
       (optionSelected)="onSelect($event)">
-      <mat-option *ngFor="let option of options$ | async" [value]="option">
+      <mat-option *ngFor="let option of (options$ | async) ?? []" [value]="option">
         {{option}}
       </mat-option>
     </mat-autocomplete>

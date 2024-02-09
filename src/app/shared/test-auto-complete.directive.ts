@@ -1,4 +1,4 @@
-import { ElementRef, AfterViewInit, Directive, EventEmitter, Input, NgZone, OnDestroy, OnInit, Output } from '@angular/core';
+import { ElementRef, AfterViewInit, Directive, EventEmitter, Input, NgZone, OnDestroy, OnInit, Output, Inject } from '@angular/core';
 import { MatAutocomplete } from '@angular/material/autocomplete';
 import { debounceTime, fromEvent, Subject, takeUntil, tap } from 'rxjs';
 
@@ -25,9 +25,9 @@ export class TestAutoCompleteDirective implements OnInit, OnDestroy, AfterViewIn
   private thrPc = 0;
   private singleOptionHeight = SELECT_ITEM_HEIGHT_EM;
 
-  private destroyed$ = new Subject<boolean>();
+  constructor(private matAuto: MatAutocomplete, @Inject(ElementRef) private elementRef: ElementRef, @Inject(NgZone) private ngZone: NgZone) { }
 
-  constructor(private matAuto: MatAutocomplete, private elementRef: ElementRef, private ngZone: NgZone) { }
+  private destroyed$ = new Subject<boolean>();
 
   ngOnInit() {
     this.evaluateThreshold();
