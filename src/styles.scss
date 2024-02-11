@@ -1,2 +1,28 @@
 /* Add application styles & imports to this file! */
+@use '@angular/material' as mat;
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";/* You can add global styles to this file, and also import other style files */
+
+@include mat.core();
+
+$my-primary: mat.define-palette(mat.$light-blue-palette, 500);
+$my-accent: mat.define-palette(mat.$blue-gray-palette, A200, A100, A400);
+
+// The "warn" palette is optional and defaults to red if not specified.
+$my-warn: mat.define-palette(mat.$red-palette);
+
+$theme: mat.define-light-theme((
+  color: (
+    primary: $my-primary,
+    accent: $my-accent,
+    warn: $my-warn,
+  ),
+  typography: mat.define-typography-config(),
+  density: -2,
+));
+
+@include mat.form-field-density(-5);
+@include mat.button-density(-1);
+@include mat.icon-button-density(-5);
+@include mat.checkbox-density(-3);
+@include mat.radio-density(-3);
+@include mat.table-density(-4);
