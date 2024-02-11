@@ -4,19 +4,9 @@
   </h1>
 </div>
 <div class="container">
-  <!-- <mat-form-field appearance="outline">
-      <mat-label>Select</mat-label>
-      <mat-select (infiniteScroll)="getNextBatch()"
-          (valueChange)="onSelect($event)"
-
-          infiniteScrollSelect>
-          <mat-option *ngFor="let option of options$ | async" [value]="option">{{option}}</mat-option>
-      </mat-select>
-  </mat-form-field> -->
-  <hr>
   <hr>
 
-  <mat-form-field class="example-full-width" appearance="fill">
+  <mat-form-field class="example-full-width" appearance="outline">
     <mat-label>Number</mat-label>
     <input type="text"
         placeholder="Pick one"
